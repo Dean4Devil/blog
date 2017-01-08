@@ -1,0 +1,19 @@
+$doctype 5
+<html>
+  <head>
+    <meta charset=utf-8>
+
+    <meta name=description content="My blog">
+
+    <link rel=stylesheet type=text/css href=../css/style.css>
+  <body>
+    <div .pl-g>
+      <div .sidebar .pl-u-1 .pl-u-md-1-4>
+        ^{sidebar}
+      <div .content .pl-u-1 .pl-u-md-3-4>
+        #{content}
+    <footer .footer>
+      <div .container>
+        <section .copyright>
+          <i .fa .fa-copyright>
+          Content licensed under the Creative Commons Attribution-ShareAlike 4.0 International
