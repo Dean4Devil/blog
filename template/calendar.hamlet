@@ -1,0 +1,9 @@
+<div .calendar-container>
+  <time .calendar>
+    <span .weekday> Wed
+    <p>,
+    <span .day> 09
+    <span .month> Feb
+    <span .year>17
+    <span .time>
+      11:00

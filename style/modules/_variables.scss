@@ -1,0 +1,102 @@
+//----------------------------------*\
+// BREAKPOINTS
+//----------------------------------*/
+
+$breakpoint-xx-small: 320px - 1px;
+$breakpoint-x-small: 480px - 1px;
+$breakpoint-small: 768px - 1px;
+$breakpoint-medium: 1024px - 1px;
+$breakpoint-large: 1140px - 1px;
+$breakpoint-x-large: 1280px - 1px;
+$breakpoint-xx-large: 1444px - 1px;
+
+
+
+//----------------------------------*\
+// COLOUR SCHEME
+//----------------------------------*/
+
+$indigo-50:  #e8eaf6;
+$indigo-100: #c5cae9;
+$indigo-200: #9fa8da;
+$indigo-300: #7986cb;
+$indigo-400: #5c6bc0;
+$indigo-500: #3f51b5;
+$indigo-600: #3949ab;
+$indigo-700: #303f9f;
+$indigo-800: #283593;
+$indigo-900: #1a237e;
+
+$deep-purple-50:  #ede7f6;
+$deep-purple-100: #d1c4e9;
+$deep-purple-200: #b39ddb;
+$deep-purple-300: #9575cd;
+$deep-purple-400: #7e57c2;
+$deep-purple-500: #673ab7;
+$deep-purple-600: #5e35b1;
+$deep-purple-700: #512da8;
+$deep-purple-800: #4527a0;
+$deep-purple-900: #311b92;
+
+$blue-grey-50:  #eceff1;
+$blue-grey-100: #cfd8dc;
+$blue-grey-200: #b0bec5;
+$blue-grey-300: #90a4ae;
+$blue-grey-400: #78909c;
+$blue-grey-500: #607d8b;
+$blue-grey-600: #546e7a;
+$blue-grey-700: #455a64;
+$blue-grey-800: #37474f;
+$blue-grey-900: #263238;
+
+$black:    #000000;
+$grey-900: #212121;
+$grey-bg:  #303030;
+$grey-800: #424242;
+
+$background-color:  $grey-bg;
+$main-text:  rgb(255, 255, 255);
+$muted-text: darken($main-text, 30%);
+$hint-text:  darken($main-text, 50%);
+$line-break: darken($main-text, 60%);
+
+$primary: $indigo-500;
+$primary2: $indigo-700;
+$primary3: $indigo-800;
+
+$accent: $blue-grey-300;
+
+//----------------------------------*\
+// TYPOGRAPHY
+//----------------------------------*/
+
+$title-font-family: "Open Sans", "Myriad Pro", "Lucida Grande",
+  "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+
+$text-font-family: "Noto Serif", Georgia, Cambria, "Times New Roman",
+  Times, serif;
+
+//----------------------------------*\
+// DRAWER
+//----------------------------------*/
+
+$drawer-background-color: #232323;
+$drawer-text-color: #909090;
+$drawer-hover-color: #DDD;
+
+//----------------------------------*\
+// INPUTS
+//----------------------------------*/
+
+$input-font-family: $title-font-family;
+$input-background-color: $line-break;
+$input-text-color: $main-text;
+$input-placeholder-color: $muted-text;
+
+//----------------------------------*\
+// GRID
+//----------------------------------*/
+$total-columns: 12;
+$column-width: (100% / $total-columns);
+$max-width: 1444px;
+$gutter: 1rem;

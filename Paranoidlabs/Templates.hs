@@ -8,14 +8,28 @@ data Urls = Test
 render :: Render Urls
 render Test _ = "/test"
 
-postLayout :: Html -> Html
-postLayout content =
-    $(shamletFile "template/post.hamlet")
+postpage :: Html -> Html
+postpage text =
+    $(shamletFile "template/default.hamlet")
   where
-      sidebar = $(shamletFile "template/sidebar.hamlet")
+    title = "Uh.. A post?"::String
+    content = post text
 
-indexLayout :: Html -> Html
-indexLayout content =
-    $(shamletFile "template/index.hamlet")
+index :: [String] -> Html
+index posts =
+    $(shamletFile "template/default.hamlet")
   where
-    sidebar = $(shamletFile "template/sidebar.hamlet")
+    title = "Uh.. A blog?"::String
+    content = $(shamletFile "template/index.hamlet")
+
+navigation :: Html
+navigation =
+    $(shamletFile "template/navigation.hamlet")
+
+calendar :: Html
+calendar =
+    $(shamletFile "template/calendar.hamlet")
+
+post :: Html -> Html
+post text =
+    $(shamletFile "template/post.hamlet")

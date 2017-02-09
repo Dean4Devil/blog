@@ -18,12 +18,14 @@ executable static-generator
     other-modules:      Paranoidlabs.Templates
     default-extensions: OverloadedStrings, EmptyDataDecls
     build-depends:      base,
+                        text,
                         feed,
-                        pandoc,
+                        pandoc >= 1.19,
                         blaze-html,
                         blaze-markup,
                         shake,
                         shakespeare,
+                        shakespeare-sass,
                         feed
 
     default-language:   Haskell2010

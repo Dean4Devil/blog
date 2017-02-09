@@ -1,0 +1,34 @@
+.footer {
+  position: relative;
+  bottom: 0;
+  padding: 2em 0em 2em;
+  margin-left: 2em;
+  margin-right: 2em;
+
+  border-top: 2px solid $line-break;
+
+  font-family: $title-font-family;
+  font-size: 0.7em;
+  color: $hint-text;
+  text-align: center;
+
+  a {
+    color: $muted-text;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: $primary;
+      text-decoration: underline;
+    }
+  }
+
+  span {
+    margin-bottom: 0;
+    line-height: 1;
+  }
+
+  small {
+    font-size: 0.6em;
+  }
+}

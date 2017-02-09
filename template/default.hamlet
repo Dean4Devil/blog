@@ -1,0 +1,25 @@
+$doctype 5
+<html>
+  <head>
+    <meta charset=utf-8>
+
+    <title> #{show title}
+    <meta name=description content="My blog">
+
+    <meta name=HandheldFriendly content=True>
+    <meta name=viewport content="width=device-width, initial-scale=1.0">
+
+    <link rel=stylesheet type=text/css href=css/style.css>
+  <body>
+    <div .container>
+      <aside .sidebar-container>
+        <div .sidebar>
+          ^{navigation}
+      <section .content-container>
+        <div .content>
+          ^{content}
+
+        <footer .footer>
+          <span class=license>Unless otherwise noted, all content is licensed under a #
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+              Creative Commons Attribution-ShareAlike 4.0 International License
