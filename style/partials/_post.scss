@@ -1,11 +1,14 @@
 .post {
   display: block;
   position: relative;
+  margin: 5px;
+  background-color: darken($background-color, 2%);
+  border-radius: 2px;
 }
 
 .post-content {
   display: inline-block;
   position: relative;
-  left: 5em;
-  top: 0em;
+  left: 20%;
+  width: 80%;
 }

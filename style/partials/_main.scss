@@ -1,40 +1,10 @@
 html,
-body,
-.container {
+body {
   height: 100%;
-}
-
-.container {
-  position: relative;
+  background: $background-color;
+  color: $main-text;
 }
 
 .content-container {
-  position: absolute;
-  left: 30%;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  overflow: auto;
-
-  @include breakpoint(medium) {
-    position: relative;
-    left: 0;
-  }
-}
-
-.content {
-  position: relative;
-  padding: 4em 10% 4em 4em;
-  max-width: 92em;
-
-  @include breakpoint(medium) {
-    padding: 4em 10%;
-    max-width: 100%;
-  }
-
-  @include breakpoint(small) {
-    & {
-      padding: 2em 1em;
-    }
-  }
+  @extend .container;
 }

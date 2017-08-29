@@ -1,21 +1,3 @@
-//----------------------------------*\
-// BREAKPOINTS
-//----------------------------------*/
-
-$breakpoint-xx-small: 320px - 1px;
-$breakpoint-x-small: 480px - 1px;
-$breakpoint-small: 768px - 1px;
-$breakpoint-medium: 1024px - 1px;
-$breakpoint-large: 1140px - 1px;
-$breakpoint-x-large: 1280px - 1px;
-$breakpoint-xx-large: 1444px - 1px;
-
-
-
-//----------------------------------*\
-// COLOUR SCHEME
-//----------------------------------*/
-
 $indigo-50:  #e8eaf6;
 $indigo-100: #c5cae9;
 $indigo-200: #9fa8da;
@@ -55,7 +37,7 @@ $grey-bg:  #303030;
 $grey-800: #424242;
 
 $background-color:  $grey-bg;
-$main-text:  rgb(255, 255, 255);
+$main-text:  rgb(225, 225, 225);
 $muted-text: darken($main-text, 30%);
 $hint-text:  darken($main-text, 50%);
 $line-break: darken($main-text, 60%);
@@ -66,9 +48,6 @@ $primary3: $indigo-800;
 
 $accent: $blue-grey-300;
 
-//----------------------------------*\
-// TYPOGRAPHY
-//----------------------------------*/
 
 $title-font-family: "Open Sans", "Myriad Pro", "Lucida Grande",
   "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
@@ -76,27 +55,20 @@ $title-font-family: "Open Sans", "Myriad Pro", "Lucida Grande",
 $text-font-family: "Noto Serif", Georgia, Cambria, "Times New Roman",
   Times, serif;
 
-//----------------------------------*\
-// DRAWER
-//----------------------------------*/
 
 $drawer-background-color: #232323;
 $drawer-text-color: #909090;
 $drawer-hover-color: #DDD;
 
-//----------------------------------*\
-// INPUTS
-//----------------------------------*/
 
 $input-font-family: $title-font-family;
 $input-background-color: $line-break;
 $input-text-color: $main-text;
 $input-placeholder-color: $muted-text;
 
-//----------------------------------*\
-// GRID
-//----------------------------------*/
-$total-columns: 12;
-$column-width: (100% / $total-columns);
-$max-width: 1444px;
-$gutter: 1rem;
+// Grid system
+$column-names: 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve';
+$column-width: (100% / length($column-names)) - 1%;
+$breakpoint-small: 540px;
+$breakpoint-med: 720px;
+$max-width: 1020px;

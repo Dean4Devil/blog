@@ -1,6 +1,8 @@
-$forall postcont <- posts
-  <div .post>
-    ^{calendar}
-    <div .post-content>
-      <p>
-        #{postcont}
+$forall post <- posts
+  <a href=@{(PostLink post)}>
+    <div .post>
+      <div .post-content>
+        <h2>
+          #{extractTitle post}
+        <p>
+          #{extractAbstract post}

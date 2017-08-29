@@ -9,16 +9,15 @@ $doctype 5
     <meta name=HandheldFriendly content=True>
     <meta name=viewport content="width=device-width, initial-scale=1.0">
 
-    <link rel=stylesheet type=text/css href=css/style.css>
+    <link rel=stylesheet type=text/css href=@{CSS}>
   <body>
-    <div .container>
-      <aside .sidebar-container>
+    <div .container-fluid>
+      <aside .sidebar-container .two-columns-lg .three-columns-md .twelve-columns-sm>
         <div .sidebar>
           ^{navigation}
-      <section .content-container>
+      <section .content-container .nine-columns-lg .eight-columns-md .eleven-columns-sm>
         <div .content>
           ^{content}
-
         <footer .footer>
           <span class=license>Unless otherwise noted, all content is licensed under a #
             <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
