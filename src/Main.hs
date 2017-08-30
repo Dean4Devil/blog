@@ -41,7 +41,7 @@ needAllPosts = need =<< allPosts
 -- Define all build targets here
 buildTargets :: Rules ()
 buildTargets = action $ do
-    need ["out/index.html", "out/css/style.css"]
+    need ["out/index.html", "out/styles/default.css"]
     needAllPosts
 
 main :: IO ()
@@ -56,7 +56,7 @@ main = shakeArgs shakeOptions {shakeFiles = "out"} $ do
         let src = (-<.> ".md") . dropDirectory1 $ out
         need [src]
         generatePost src out
-    "out/css/style.css" %> \out -> do
+    "out/styles/default.css" %> \out -> do
         alwaysRerun -- FIXME: Improve this
         let src = (-<.> ".scss") . ("style" </>) . dropDirectory1 . dropDirectory1 $ out
         partials <- getDirectoryFiles "" ["style/*.scss"]
