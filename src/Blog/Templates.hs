@@ -1,8 +1,8 @@
 {-# LANGUAGE TemplateHaskell, OverloadedStrings #-}
 
 module Blog.Templates
-    ( indexTemplate
-    , postTemplate
+    ( listView
+    , detailView
     ) where
 
 import Blog.Post
@@ -29,22 +29,22 @@ render Github _ = "https://github.com/dequbed"
 render Twitter _ = "https://twitter.com/dequbed"
 render (PostLink post) _ = pack $ "/posts/" ++ postUrl post
 
-indexTemplate :: [Post] -> Html
-indexTemplate posts = $(hamletFile "template/default.hamlet") render
-  where
-    title = "Uh.. A blog?" :: String
-    content = $(hamletFile "template/index.hamlet")
-
 navigation :: HtmlUrl Urls
 navigation = $(hamletFile "template/navigation.hamlet")
 
 calendar :: HtmlUrl Urls
 calendar = $(hamletFile "template/calendar.hamlet")
 
-postTemplate :: Post -> Html
-postTemplate post = $(hamletFile "template/default.hamlet") render
+listView :: [Post] -> Html
+listView posts = $(hamletFile "template/default.hamlet") render
+  where
+    title = "Uh.. A blog?" :: String
+    content = $(hamletFile "template/listview.hamlet")
+
+detailView :: Post -> Html
+detailView post = $(hamletFile "template/default.hamlet") render
   where
     title = extractTitle post
     doc = postDoc post
     text = writeHtml' doc
-    content = $(hamletFile "template/post.hamlet")
+    content = $(hamletFile "template/detailview.hamlet")

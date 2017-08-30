@@ -1,6 +1,6 @@
 module Blog
-    ( renderIndex
-    , renderPost
+    ( generateList
+    , generatePost
     ) where
 
 import Blog.Post
@@ -29,16 +29,16 @@ readMarkdown' = handleError . readMarkdown def
 writeHtmlFile :: FilePath -> Html -> Action ()
 writeHtmlFile path html = writeFile' path (renderHtml html)
 
-renderIndex :: FilePath -> Action ()
-renderIndex path = do
-    infiles <- getDirectoryFiles "" ["posts/*.md"]
+generateList :: FilePath -> Action ()
+generateList path = do
+    infiles <- getDirectoryFiles "" ["posts/*md"]
     let outfiles = map (-<.> ".html") infiles
     posts <- mapM readPost' (zip infiles outfiles)
-    writeHtmlFile path $ indexTemplate posts
+    writeHtmlFile path $ listView posts
   where
-    readPost' (a, b) = readPost a b
+    readPost' = uncurry readPost
 
-renderPost :: FilePath -> FilePath -> Action ()
-renderPost src out = do
+generatePost :: FilePath -> FilePath -> Action ()
+generatePost src out = do
     post <- readPost src out
-    writeHtmlFile out $ postTemplate post
+    writeHtmlFile out $ detailView post
