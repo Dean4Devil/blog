@@ -35,26 +35,28 @@ allPosts = do
     sources <- getDirectoryFiles "" ["posts/*md"]
     return $ map (build . (-<.> ".html")) sources
 
-needPosts = need <$> allPosts
+needAllPosts :: Action ()
+needAllPosts = need =<< allPosts
 
 -- Define all build targets here
 buildTargets :: Rules ()
 buildTargets = action $ do
     need ["out/index.html", "out/css/style.css"]
-    need <$> allPosts
+    needAllPosts
 
 main :: IO ()
 main = shakeArgs shakeOptions {shakeFiles = "out"} $ do
     buildTargets
 
-    build "index.html" *> \out -> do
-        need ["template/index.hamlet"]
+    -- Rules:
+    "out/index.html" %> \out -> do
+        needAllPosts
         generateList out
     "out/posts/*.html" %> \out -> do
         let src = (-<.> ".md") . dropDirectory1 $ out
-        need [src, "template/post.hamlet"]
+        need [src]
         generatePost src out
-    build "css/style.css" *> \out -> do
+    "out/css/style.css" %> \out -> do
         alwaysRerun -- FIXME: Improve this
         let src = (-<.> ".scss") . ("style" </>) . dropDirectory1 . dropDirectory1 $ out
         partials <- getDirectoryFiles "" ["style/*.scss"]
@@ -62,8 +64,9 @@ main = shakeArgs shakeOptions {shakeFiles = "out"} $ do
         Stdout css <- command [] "sassc" [src, "-I", "style"]
         writeFile' out css
 
+    -- Phony rules
     "serve" ~> do
         need $ map build ["index.html", "css/style.css"]
-        _ <- needPosts
+        _ <- needAllPosts
         command_ [Cwd outdir] "python" ["-m", "http.server"]
     "clean" ~> removeFilesAfter outdir ["//*"]
